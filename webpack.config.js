@@ -18,7 +18,11 @@ var config = {
       query: {
         presets: ['es2015','react']
       }
-    }]
+    },
+    {
+          test: /\.(png|jpg)$/,
+          loader: 'url-loader?limit=8192&name=[name]_[sha512:hash:base64:7].[ext]'
+        }]
   },
   devServer: {
     contentBase: "./public",
